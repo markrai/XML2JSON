@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incident>
+	<ti table='120' tv='2Q2016' fv='1.0' at='2019-03-31T21:12:15Z'>
+		<ev>
+			<id>23317403</id>
+			<ec>702</ec>
+			<se>3</se>
+			<loc type='geo'>
+				<geo lon='-74.00625' lat='40.717075' />
+				<addr>Worth St</addr>
+			</loc>
+			<valid start='2019-02-10T05:00:00Z' end='2019-04-13T03:58:59Z' />
+			<text lang='e'>In Manhattan, major road construction on Worth
+				St between W Broadway and Church St.</text>
+			<delay>8</delay>
+		</ev>
+		<ev>
+			<id>24049284</id>
+			<ec>701</ec>
+			<se>2</se>
+			<loc type='tmc'>
+				<start id='16078' dir='+' offset='86' extent='14' />
+			</loc>
+			<valid start='2019-03-02T05:00:00Z' end='2019-04-02T03:58:59Z' />
+			<text lang='e'>In Bronx, road construction on Creston Ave
+				between Minerva Pl and E 198th St.</text>
+			<delay>0</delay>
+		</ev>
+	</ti>
+</incident>
