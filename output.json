@@ -9,7 +9,7 @@
       ],
       "type": "point"
     },
-    "lastUpdated": "2019-11-17T22:56:13",
+    "lastUpdated": "2019-11-17T23:02:43",
     "validStart": "2019-02-10T05:00:00Z",
     "validEnd": "2019-04-13T03:58:59Z",
     "description": "In Manhattan, major road construction on WorthSt between W Broadway and Church St.",
@@ -20,7 +20,7 @@
   {
     "eventCode": 701,
     "severity": 2,
-    "lastUpdated": "2019-11-17T22:56:13",
+    "lastUpdated": "2019-11-17T23:02:43",
     "validStart": "2019-03-02T05:00:00Z",
     "validEnd": "2019-04-02T03:58:59Z",
     "description": "In Bronx, road construction on Creston Avebetween Minerva Pl and E 198th St.",

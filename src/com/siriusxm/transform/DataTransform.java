@@ -79,9 +79,9 @@ public class DataTransform {
 		jsonOutput.put("locations", locations);
 
 		try (FileWriter file = new FileWriter("output.json")) {
-			file.write(jsonOutput.toString(2));   // remove "2" to achieve minified JSON
+			file.write(jsonOutput.toString(Config.BEAUTIFIED)); 
 			file.flush();
-			System.out.println("XML transformed to JSON successfully!");
+			System.out.println("*** XML transformed to JSON successfully ***");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
