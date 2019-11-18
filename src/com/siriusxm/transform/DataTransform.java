@@ -25,30 +25,32 @@ public class DataTransform {
 		}
 
 		JSONObject xmlJSONObj = XML.toJSONObject(sb.toString());
-		JSONObject pilot = xmlJSONObj.getJSONObject("incident");
-		JSONObject pilot1 = pilot.getJSONObject("ti");
-		JSONArray ev = pilot1.getJSONArray("ev");
+		JSONObject pilot = xmlJSONObj.getJSONObject(Config.XML_INCIDENT);
+		JSONObject pilot1 = pilot.getJSONObject(Config.XML_TI);
+		JSONArray ev = pilot1.getJSONArray(Config.XML_EV);
 
 		if (ev.length() > 0) {
 			for (int i = 0; i < ev.length(); i++) {
 
 				JSONObject mainObject = ev.getJSONObject(i);
-				JSONObject locationSegment = mainObject.getJSONObject("loc");
+				JSONObject locationSegment = mainObject.getJSONObject(Config.XML_LOC);
 
 				JSONObject mainJson = new JSONObject();
 				JSONObject innerJson = new JSONObject();
 
-				JSONObject valid = mainObject.getJSONObject("valid");
-				JSONObject text = mainObject.getJSONObject("text");
-				mainJson.put("_id", mainObject.getInt("id"));
+				JSONObject valid = mainObject.getJSONObject(Config.XML_VALID);
+				JSONObject text = mainObject.getJSONObject(Config.XML_TEXT);
+				mainJson.put("_id", mainObject.getInt(Config.XML_ID));
 				mainJson.put("description", text.getString("content"));
 				mainJson.put("validStart", valid.getString("start"));
 				mainJson.put("validEnd", valid.getString("end"));
-				mainJson.put("eventCode", mainObject.getInt("ec"));
-				mainJson.put("severity", mainObject.getInt("se"));
+				mainJson.put("eventCode", mainObject.getInt(Config.XML_EVENT_CODE));
+				mainJson.put("severity", mainObject.getInt(Config.XML_SEVERITY));
 				mainJson.put("type", "TrafficIncident");
 				mainJson.put("lastUpdated", getNewISODate());
 
+				
+				// handle loc type: "geo"
 				if (locationSegment.has("geo")) {
 					JSONObject geo = locationSegment.getJSONObject("geo");
 					List<Double> cordinates = new ArrayList<Double>();
@@ -59,7 +61,9 @@ public class DataTransform {
 					innerJson.put("coordinates", cordinates);
 					mainJson.put("geo", innerJson);
 				}
-				if (locationSegment.has("tmc")) {
+				
+				// handle loc type: "tmc"
+				if (locationSegment.has("start")) {
 					JSONObject start = locationSegment.getJSONObject("start");
 					JSONObject tmcJson = new JSONObject();
 					tmcJson.put("table", start.getInt("extent"));
