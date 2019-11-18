@@ -1,1 +1,35 @@
-{"locations":[{"eventCode":702,"severity":3,"geo":{"coordinates":[-74.00625,40.717075],"type":"point"},"lastUpdated":"2019-11-17T22:35:12","validStart":"2019-02-10T05:00:00Z","validEnd":"2019-04-13T03:58:59Z","description":"In Manhattan, major road construction on WorthSt between W Broadway and Church St.","_id":23317403,"type":"TrafficIncident","roadName":"Worth St"},{"eventCode":701,"severity":2,"lastUpdated":"2019-11-17T22:35:12","validStart":"2019-03-02T05:00:00Z","validEnd":"2019-04-02T03:58:59Z","description":"In Bronx, road construction on Creston Avebetween Minerva Pl and E 198th St.","_id":24049284,"tmc":{"id":16078,"table":14,"direction":"+"},"type":"TrafficIncident"}]}
+{"locations": [
+  {
+    "eventCode": 702,
+    "severity": 3,
+    "geo": {
+      "coordinates": [
+        -74.00625,
+        40.717075
+      ],
+      "type": "point"
+    },
+    "lastUpdated": "2019-11-17T22:56:13",
+    "validStart": "2019-02-10T05:00:00Z",
+    "validEnd": "2019-04-13T03:58:59Z",
+    "description": "In Manhattan, major road construction on WorthSt between W Broadway and Church St.",
+    "_id": 23317403,
+    "type": "TrafficIncident",
+    "roadName": "Worth St"
+  },
+  {
+    "eventCode": 701,
+    "severity": 2,
+    "lastUpdated": "2019-11-17T22:56:13",
+    "validStart": "2019-03-02T05:00:00Z",
+    "validEnd": "2019-04-02T03:58:59Z",
+    "description": "In Bronx, road construction on Creston Avebetween Minerva Pl and E 198th St.",
+    "_id": 24049284,
+    "tmc": {
+      "id": 16078,
+      "table": 14,
+      "direction": "+"
+    },
+    "type": "TrafficIncident"
+  }
+]}

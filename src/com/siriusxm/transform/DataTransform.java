@@ -49,7 +49,6 @@ public class DataTransform {
 				mainJson.put("type", "TrafficIncident");
 				mainJson.put("lastUpdated", getNewISODate());
 
-				
 				// handle loc type: "geo"
 				if (locationSegment.has("geo")) {
 					JSONObject geo = locationSegment.getJSONObject("geo");
@@ -61,7 +60,7 @@ public class DataTransform {
 					innerJson.put("coordinates", cordinates);
 					mainJson.put("geo", innerJson);
 				}
-				
+
 				// handle loc type: "tmc"
 				if (locationSegment.has("start")) {
 					JSONObject start = locationSegment.getJSONObject("start");
@@ -76,11 +75,11 @@ public class DataTransform {
 			}
 		}
 
-		JSONObject location = new JSONObject();
-		location.put("locations", locations);
+		JSONObject jsonOutput = new JSONObject();
+		jsonOutput.put("locations", locations);
 
 		try (FileWriter file = new FileWriter("output.json")) {
-			file.write(location.toString());
+			file.write(jsonOutput.toString(2));   // remove "2" to achieve minified JSON
 			file.flush();
 			System.out.println("XML transformed to JSON successfully!");
 		} catch (Exception e) {
